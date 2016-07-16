@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Feature.Todos
 {
-    [Route("api/[controller]")]
+    [Route("api/todo")]
     public class TodoController : Controller
     {
         public TodoController(ITodoRepository todoItems)
@@ -36,7 +36,7 @@ namespace Feature.Todos
                 return BadRequest();
             }
             TodoItems.Add(item);
-            return CreatedAtAction("GetTodo", new { id = item.Key }, item);
+            return CreatedAtRoute("GetTodo", new { id = item.Key }, item);
         }
 
         [HttpPut("{id}")]
