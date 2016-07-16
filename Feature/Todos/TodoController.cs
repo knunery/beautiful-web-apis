@@ -31,6 +31,11 @@ namespace Feature.Todos
         [HttpPost]
         public IActionResult Create([FromBody] TodoItem item)
         {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             if (item == null)
             {
                 return BadRequest();
