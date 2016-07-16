@@ -8,7 +8,7 @@ namespace aspnetcoreapp
         public static void Main(string[] args)
         {
             var host = new WebHostBuilder()
-                .UseKestrel()
+                .UseKestrel(options => { options.AddServerHeader = false; })
                 .UseStartup<Startup>()
                 .Build();
 
