@@ -29,6 +29,7 @@ namespace Feature.Todos
         }
 
         [HttpPost]
+        [SkipValidateModelState]
         public IActionResult Create([FromBody] TodoItem item)
         {
             // if(!ModelState.IsValid)
