@@ -1,8 +1,10 @@
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Feature.Todos
 {
+    [AllowAnonymous]
     [Route("api/todo")]
     public class TodoController : Controller
     {

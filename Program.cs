@@ -7,6 +7,7 @@ namespace aspnetcoreapp
     {
         public static void Main(string[] args)
         {
+            // protip: remove Kestrel server header
             var host = new WebHostBuilder()
                 .UseKestrel(options => { options.AddServerHeader = false; })
                 .UseStartup<Startup>()
