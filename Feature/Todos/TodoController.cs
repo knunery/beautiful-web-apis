@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Feature.Todos
 {
     [AllowAnonymous]
-    [Route("api/todo")]
+    [Route("api/v1/todo")]
     public class TodoController : Controller
     {
         public TodoController(ITodoRepository todoItems)
