@@ -1,3 +1,4 @@
+using Feature.Llamas;
 using Feature.Todos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -30,10 +31,10 @@ namespace aspnetcoreapp
                 .AddMvc(options =>
                 {
                     // protip: require user to be authenticated by default
-                    // var policy = new AuthorizationPolicyBuilder()
-                    //     .RequireAuthenticatedUser()
-                    //     .Build();
-                    //options.Filters.Add(new AuthorizeFilter(policy));
+                    var policy = new AuthorizationPolicyBuilder()
+                        .RequireAuthenticatedUser()
+                        .Build();
+                    options.Filters.Add(new AuthorizeFilter(policy));
 
                     options.Filters.Add(new ValidateModelStateAttribute());
                 })
@@ -44,6 +45,7 @@ namespace aspnetcoreapp
 
             services.AddSwaggerGen();
 
+            services.AddSingleton<ILlamaRepository, LlamaRepository>();
             services.AddSingleton<ITodoRepository, TodoRepository>();
         }
     }
