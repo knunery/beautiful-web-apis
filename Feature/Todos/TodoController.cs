@@ -14,6 +14,7 @@ namespace Feature.Todos
         }
         public ITodoRepository TodoItems { get; set; }
 
+        [HttpGet]
         public IEnumerable<TodoItem> GetAll()
         {
             return TodoItems.GetAll();
