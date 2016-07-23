@@ -21,7 +21,7 @@ namespace aspnetcoreapp
             // Enable middleware to serve generated Swagger as a JSON endpoint
             app.UseSwagger();
 
-            // // Enable middleware to serve swagger-ui assets (HTML, JS, CSS etc.)
+            // Enable middleware to serve swagger-ui assets (HTML, JS, CSS etc.)
             app.UseSwaggerUi();
         }
 
